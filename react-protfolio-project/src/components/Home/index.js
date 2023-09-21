@@ -9,7 +9,7 @@ const Home = () => {
     const [letterClass, setLetterClass] = useState('text-animate')
     const [isMounted, setIsMounted] = useState(true);
 
-    const nameArray = [' K', 'o', 's', 't', 'i', 'a', 'n', 't', 'y', 'n']
+    const nameArray = [' ', 'K', 'o', 's', 't', 'i', 'a', 'n', 't', 'y', 'n']
     const jobArray = ['w', 'e', 'b', ' ', 'd', 'e', 'v', 'e', 'l', 'o', 'p', 'e', 'r']
     
     useEffect(() => {
