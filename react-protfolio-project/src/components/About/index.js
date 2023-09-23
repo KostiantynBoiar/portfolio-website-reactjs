@@ -24,8 +24,8 @@ const About = () => {
                     with opportunities for professional growth.
                     </p>
                 <p align="LEFT">I am smart, easy to train and love to solve interesting problems. I'm interested in advanced programming and computer science.</p>
-                <p>I am studying at a university on a cybersecurity course and at another university on a computer technology course,
-                     and at the same time I am studying and deepening my knowledge in areas that interest me</p>
+                <p>I am studying at a university on a cybersecurity course and at another university on a computer science course,
+                     and at the same time I am studying and deepening my knowledge in areas that interest me.</p>
             </div>
             <div className='stage-cube-cont'>
                 <div className='cubespinner'>
