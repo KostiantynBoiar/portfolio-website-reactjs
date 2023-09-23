@@ -4,6 +4,7 @@ import './index.scss'
 import LogoS from '../../assets/images/logo-k.png'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Импортируйте стили из библиотеки
 import { Carousel } from 'react-responsive-carousel';
+import Loader from 'react-loaders';
 
 const Projects = () => {
     const [isDescriptionVisible, setDescriptionVisible] = useState(false);
@@ -29,6 +30,10 @@ const Projects = () => {
                 idx={15}
               />
             </h1>
+            <p>
+            On this page you can see my works which show what I was working on,<br/> when you click on the image you will see another page where there will be a description<br/> of the project, 
+            a technology stack and a link to the project itself
+            </p>
           </div>
           <div className='projects'>
             <Carousel
@@ -53,6 +58,7 @@ const Projects = () => {
             </Carousel>
           </div>
         </div>
+        <Loader type='pacman'/>
       </>
     );
   };
