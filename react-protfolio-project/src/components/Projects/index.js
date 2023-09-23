@@ -2,18 +2,24 @@ import React, { useState } from 'react';
 import AnimatedLetters from '../AnimatedLetters'
 import './index.scss'
 import LogoS from '../../assets/images/logo-k.png'
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Импортируйте стили из библиотеки
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; 
 import { Carousel } from 'react-responsive-carousel';
 import Loader from 'react-loaders';
+import { Link, Routes } from 'react-router-dom';
 
 const Projects = () => {
+
     const [isDescriptionVisible, setDescriptionVisible] = useState(false);
     const [activeImageIndex, setActiveImageIndex] = useState(0);
   
     const toggleDescription = () => {
       setDescriptionVisible(!isDescriptionVisible);
     };
-  
+
+    const handleClickImage = (index) => {
+        window.location.href = `/project-${index + 1}`;
+      };
+
     const images = [
       require('../../assets/images/logo-k.png'),
       require('../../assets/images/logo-k.png'),
@@ -31,7 +37,7 @@ const Projects = () => {
               />
             </h1>
             <p>
-            On this page you can see my works which show what I was working on,<br/> when you click on the image you will see another page where there will be a description<br/> of the project, 
+            On this page you can see my works which show what I was working on, when you click on the image you will see another page where there will be a description of the project,
             a technology stack and a link to the project itself
             </p>
           </div>
@@ -41,20 +47,27 @@ const Projects = () => {
               onChange={index => setActiveImageIndex(index)}
             >
               {images.map((image, index) => (
-                <div key={index}>
-                  <img
+               <div key={index}>
+                <img
                     className='project-image'
                     src={image}
                     alt={`Project ${index}`}
-                    onClick={() => toggleDescription()}
-                  />
+                    onClick={() => {
+                    toggleDescription();
+                    handleClickImage(index);
+                    }}
+                />
+
                   {isDescriptionVisible && (
                     <div className='description'>
                       <p>Описание изображения #{index + 1}</p>
                     </div>
                   )}
+
                 </div>
+
               ))}
+
             </Carousel>
           </div>
         </div>
